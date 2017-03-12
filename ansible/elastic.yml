@@ -1,0 +1,25 @@
+- name: Elasticsearch
+  hosts: localhost
+  remote_user: vagrant
+  roles:
+    - { role: elasticsearch,  
+    es_instance_name: "node",
+    es_data_dirs: "/opt/elasticsearch/data", 
+    es_log_dir: "/opt/elasticsearch/logs", 
+    es_config: {
+        node.name: "${HOSTNAME}", 
+        cluster.name: "the-one",
+        discovery.zen.ping.unicast.hosts: "10.100.100.101:9301,10.100.100.102:9301",
+        network.host: "_enp0s8:ipv4_",
+        http.port: 9201,
+        transport.tcp.port: 9301,
+        node.data: true,
+        node.master: true,
+        bootstrap.memory_lock: true,
+        } 
+    }
+  vars:
+    es_scripts: false
+    es_templates: false
+    es_version_lock: false
+    es_heap_size: 1g
