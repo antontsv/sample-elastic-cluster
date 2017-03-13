@@ -28,3 +28,10 @@ if everything is successfull you will see the following:
 }
 ```
 Double check cluster status says "green".
+
+## Required software versions
+🚀  This setup is verified with: Vagrant 1.9.2 and VirtualBox 5.1.14
+on MacOS/Windows
+
+🚧  Please note at the time of writing VirtualBox 5.1.16/Vagrant 1.9.2
+is not working on windows - sync folder is not mounted properly
