@@ -3,6 +3,7 @@
 ```sh
 git clone --recursive https://github.com/antontsv/sample-elastic-cluster.git
 cd sample-elastic-cluster
+vagrant plugin install vagrant-cachier
 vagrant up
 curl 'http://10.100.100.101:9201/_cluster/health?pretty'
 ```
