@@ -8,6 +8,9 @@ vagrant up
 curl 'http://10.100.100.101:9201/_cluster/health?pretty'
 ```
 
+`vagrant up` will start 3 nodes, but can also run minumumal setup (2 nodes):
+`vagant up elastic-01 elastic-02`
+
 if everything is successfull you will see the following:
 ```json
 {
