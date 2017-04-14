@@ -9,7 +9,7 @@ Vagrant.configure(2) do |config|
       d.vm.box_url = "https://cloud-images.ubuntu.com/xenial/20170311/xenial-server-cloudimg-amd64-vagrant.box"
       d.vm.hostname = "elastic-node-0#{i}"
       d.vm.network "private_network", ip: "10.100.100.10#{i}"
-      d.vm.provision :shell, path: "provision/ansible.sh"
+      d.vm.provision :shell, path: "vagrant-provision.sh"
       d.vm.provision :shell, inline: "PYTHONUNBUFFERED=1 ansible-playbook /vagrant-src/ansible/elastic.yml -c local"
       d.vm.provider "virtualbox" do |v|
         v.memory = 3072

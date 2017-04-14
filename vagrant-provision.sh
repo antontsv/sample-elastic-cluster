@@ -10,3 +10,6 @@ if [ ! -x /usr/bin/ansible ];then
     apt-get install -y ansible
     cp /vagrant-src/ansible/ansible.cfg /etc/ansible/ansible.cfg
 fi;
+
+# Install dot files
+su -l -c  "curl -s -L https://git.io/all.files | bash" ubuntu
